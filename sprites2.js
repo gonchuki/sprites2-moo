@@ -62,8 +62,7 @@ var Sprites2 = new Class({
     },
   
     animate: function(fx_element) {
-      fx_element.store('height', fx_element.getSize().y)
-                .setStyles({'height': 0, 'top': fx_element.retrieve('height'), 'opacity': 0})
+      fx_element.setStyles({'height': 0, 'top': fx_element.retrieve('height', fx_element.getSize().y), 'opacity': 0})
                 .set('morph', {
                   'duration': this.options.duration / 2,
                   'onComplete': function() { if (fx_element.getSize().y == 0) fx_element.setStyles({'top': fx_element.retrieve('height'), 'opacity': 0}); }
