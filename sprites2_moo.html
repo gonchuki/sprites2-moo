@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="sprites2.css" media="all" />
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.1/mootools-yui-compressed.js"></script>
+  <script type="text/javascript" src="sprites2.js"></script>
+  
+  <script type="text/javascript">
+    window.addEvent('domready', function() {
+      new Sprites2({mode: 'fade', item_selector: '#nav_fade a'});
+      new Sprites2({mode: 'slide', item_selector: '#nav_slide a'});
+      new Sprites2({mode: 'animate', item_selector: '#nav_animate a'});
+      
+      Sprites2.implement({
+        effects: {
+          slide_x: function(fx_element) {
+            fx_element.store('width', fx_element.getSize().x).setStyles({'width': 0});
+            
+            this.show_fn = function(fx_element) { fx_element.tween('width', fx_element.retrieve('width')); };
+            this.hide_fn = function(fx_element) { fx_element.tween('width', 0); };
+          }
+        }
+      });
+      
+      new Sprites2({mode: 'slide_x', item_selector: '#nav_slidex a'});
+    });
+  </script>
+</head>
+
+<body>
+  <h1>CSS Sprites2 for Mootools</h1>
+  <p>as seen on <a href="http://blog.gonchuki.com/archives/css-sprites2-its-mootools-time/">http://blog.gonchuki.com/archives/css-sprites2-its-mootools-time/</a></p>
+  
+  <h3>fade</h3>
+  <ul class="nav" id="nav_fade">
+    <li id="nav_home"><a href="#">Home</a></li>
+    <li id="nav_about" class="current"><a href="#">About</a></li>
+    <li id="nav_services"><a href="#">Services</a></li>
+    <li id="nav_contact"><a href="#">Contact</a></li>
+  </ul>
+  
+  <br />
+  
+  <h3>slide</h3>
+  <ul class="nav" id="nav_slide">
+    <li id="nav_home"><a href="#">Home</a></li>
+    <li id="nav_about" class="current"><a href="#">About</a></li>
+    <li id="nav_services"><a href="#">Services</a></li>
+    <li id="nav_contact"><a href="#">Contact</a></li>
+  </ul>
+  
+  <br />
+  
+  <h3>animate</h3>
+  <ul class="nav" id="nav_animate">
+    <li id="nav_home"><a href="#">Home</a></li>
+    <li id="nav_about" class="current"><a href="#">About</a></li>
+    <li id="nav_services"><a href="#">Services</a></li>
+    <li id="nav_contact"><a href="#">Contact</a></li>
+  </ul>
+  
+  <br />
+  
+  <h3>horizontal slide via extended class</h3>
+  <ul class="nav" id="nav_slidex">
+    <li id="nav_home"><a href="#">Home</a></li>
+    <li id="nav_about" class="current"><a href="#">About</a></li>
+    <li id="nav_services"><a href="#">Services</a></li>
+    <li id="nav_contact"><a href="#">Contact</a></li>
+  </ul>
+</body>
+</html>
