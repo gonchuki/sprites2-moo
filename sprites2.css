@@ -11,21 +11,11 @@
 
 .nav li {
 	display: block;
-  position: absolute;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
 }
 
 .nav li a {
-	position: absolute;
   left: 0;
-	top: 0;
-	height: 100%;
 	text-indent: -9999em;
-	overflow: hidden;
 }
 
 .nav li.current a {
@@ -33,10 +23,17 @@
 }
 
 .nav li .effect {
-  position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
+}
+
+.nav li,
+.nav li a,
+.nav li .effect {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
   height: 100%;
   overflow: hidden;
 }
