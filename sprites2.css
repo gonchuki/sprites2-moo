@@ -15,6 +15,7 @@
 
 .nav li a {
   left: 0;
+  width: 100%;
 	text-indent: -9999em;
 }
 
@@ -43,8 +44,6 @@
 /* - home - */
 #nav_home { 
   left: 23px;
-}
-#nav_home, #nav_home a { 
   width: 76px;
 }
 #nav_home .effect, #nav_home a:hover, #nav_home a:focus {
@@ -60,8 +59,6 @@
 /* - about - */
 #nav_about {
   left: 100px;
-}
-#nav_about, #nav_about a {
   width: 82px;
 }
 #nav_about .effect, #nav_about a:hover, #nav_about a:focus {
@@ -77,8 +74,6 @@
 /* - services - */
 #nav_services {
   left: 183px;
-}
-#nav_services, #nav_services a {
   width: 97px;
 }
 #nav_services .effect, #nav_services a:hover, #nav_services a:focus {
@@ -94,8 +89,6 @@
 /* - contact - */
 #nav_contact {
   left: 281px;
-}
-#nav_contact, #nav_contact a {
   width: 97px;
 }
 #nav_contact .effect, #nav_contact a:hover, #nav_contact a:focus {
