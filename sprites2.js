@@ -44,7 +44,7 @@ var Sprites2 = new Class({
         mouseleave: function() { fx_element.removeClass('mousedown'); }
       });
       
-      if (!parent_element.hasClass('current')) item.setStyle('background', 'none');
+      if (!parent_element.hasClass('current')) item.setStyle('background-image', 'none');
     });
   },
   
