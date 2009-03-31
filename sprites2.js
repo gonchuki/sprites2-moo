@@ -38,7 +38,7 @@ var Sprites2 = new Class({
       self.effects[self.options.mode].call(self, fx_element);
       parent_element.addEvents({
         mouseover: function() { if (!parent_element.hasClass('current')) self.show_fn(fx_element); },
-        mouseout: function() { if (!parent_element.hasClass('current')) { self.hide_fn(fx_element); fx_element.removeClass('mousedown') }; },
+        mouseout: function() { if (!parent_element.hasClass('current')) { self.hide_fn(fx_element); fx_element.removeClass('mousedown'); }},
         mousedown: function() { fx_element.addClass('mousedown'); },
         mouseup: function() { fx_element.removeClass('mousedown'); },
         mouseleave: function() { fx_element.removeClass('mousedown'); }
@@ -67,7 +67,7 @@ var Sprites2 = new Class({
       fx_element.setStyles({'height': 0, 'top': fx_element.retrieve('height', fx_element.getSize().y), 'opacity': 0})
                 .set('morph', {
                   'duration': this.options.duration / 2,
-                  'onComplete': function() { if (fx_element.getSize().y == 0) fx_element.setStyles({'top': fx_element.retrieve('height'), 'opacity': 0}); }
+                  'onComplete': function() { if (fx_element.getSize().y === 0) fx_element.setStyles({'top': fx_element.retrieve('height'), 'opacity': 0}); }
                 });
       
       this.show_fn = function(fx_element) { fx_element.morph({'height': fx_element.retrieve('height'), 'top': 0, 'opacity': 1}); };
